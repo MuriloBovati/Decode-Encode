@@ -18,3 +18,13 @@ para ter o texto sem a criptografia
 
 1 caixa de texto para digitar
 1 caixa de texto que devolve o texto de acordo com o botão precionado
+
+Chaves
+
+A letra "e" é convertida para "enter"
+A letra "i" é convertida para "imes"
+A letra "a" é convertida para "ai"
+A letra "o" é convertida para "ober"
+A letra "u" é convertida para "ufat"
+
+- Um botão que copie o texto criptografado/descriptografado para a área de transferência - ou seja, que tenha a mesma funcionalidade do ctrl+C ou da opção "copiar" do menu dos aplicativo
