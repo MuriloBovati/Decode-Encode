@@ -1,0 +1,20 @@
+Criar um Encoder decoder
+
+Um lugar aonde podemos digitar o texto que desejamos criptografar
+
+Aposto apertar o botão criptografar uma nova mensagem vai ser gerada apartir do texto porem criptografada
+
+no mesmo imput de texto podemo colocar o texto criptografado e apertar o botão descriptografar
+para ter o texto sem a criptografia
+
+--Simplificado
+
+2 caixa de texto
+2 botoes
+
+1 botao criptografa
+1 botão descriptografa
+
+
+1 caixa de texto para digitar
+1 caixa de texto que devolve o texto de acordo com o botão precionado
