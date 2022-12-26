@@ -29,19 +29,21 @@ header{
 }
 
 header, main{
-    width: 80%;
+    width: 70%;
     margin: auto;
 }
 
 .containerEncoder{
     width: 100%;
+    padding-bottom: 40px;
     margin: auto;
-    background-color: rgb(87, 87, 87);
+    background-color: rgb(120, 120, 120);
     border-radius: 10px;
+    
 }
 
 .containerEncoder > h1{
-    padding-top: 8px;
+    padding-top: 10px;
     text-align: center;
     color: rgba(3, 3, 3, 0.4);
     text-shadow: .3px .7px 0px rgba(121, 121, 121, 0.8);
@@ -56,7 +58,7 @@ header, main{
     font-size: 0.7em;
     resize: none;
     width: 90%;
-    height: 300px;
+    height: 180px;
     padding: 10px;
     margin: 10px auto;
     background-color: rgba(0, 116, 0, 0.829);
@@ -78,7 +80,6 @@ header, main{
 .resultado{
     text-align: start;
     margin:  10px auto;
-    height: 300px;
 }
 
 .containerButtons{
@@ -86,16 +87,20 @@ header, main{
     width: 300px;
     margin:  10px auto;
     justify-content: space-around;
+    border-radius: 10px;
+    background-color: rgb(120, 120, 120);
+    
+    
 }
 
 button{
     font-size: 1em;
-    height: 50px;
+    height: 80px;
     width: 120px;
     border-radius: 7px;
     font-weight: bold;
     border: none;
-    background-color: rgb(129, 129, 129);
+    background-color: rgb(100, 100, 100);
     box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.603);
     transition: 0.1s;
     margin: 10px 0px;
@@ -104,5 +109,6 @@ button{
 button:active{
     transform: translate3d(3px, 3px, 0px);
     box-shadow: none;
+
 }
 
