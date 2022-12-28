@@ -119,6 +119,7 @@ const compEncode = () => {
                     }
                 } textoCrypt += ' '
             }
+            this.texto.value = ''
             this.slowText(textoCrypt, this.displayResul)
             console.log(textoCrypt)
         },
@@ -131,6 +132,7 @@ const compEncode = () => {
             textoCrypt = textoCrypt.replaceAll('ober', 'o')
             textoCrypt = textoCrypt.replaceAll('ufat', 'u')
             this.slowText(textoCrypt, this.displayResul)
+            this.texto.value = ''
         },
 
         //Funcionalidades
