@@ -35,7 +35,8 @@ header, main{
 
 .containerEncoder{
     width: 100%;
-    padding-bottom: 40px;
+    max-width: 800px;
+    padding-bottom: 15px;
     margin: auto;
     background-color: rgb(120, 120, 120);
     border-radius: 10px;
@@ -53,6 +54,7 @@ header, main{
     text-align: center;
 }
 
+/*Caixa de texto*/
 .textoCode, .resultado{
     font-family: '8bit',sans-serif;
     font-size: 0.7em;
@@ -61,14 +63,15 @@ header, main{
     height: 180px;
     padding: 10px;
     margin: 10px auto;
-    background-color: rgba(0, 116, 0, 0.829);
-    color: greenyellow;
+    background-color: rgba(0, 40, 0, 0.8);
+    color: rgba(172, 255, 47, 0);
     border: none;
     text-decoration: none;
     border-radius: 10px;
     border: 1px solid rgba(5, 36, 5, 0.432);
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.7);
 }
+
 .textoCode::placeholder{
     color: greenyellow;
 }
@@ -77,11 +80,13 @@ header, main{
     outline: 0;
 }
 
+/*Caixa de resultado*/
 .resultado{
     text-align: start;
     margin:  10px auto;
 }
 
+/*Botoes*/
 .containerButtons{
     display: flex;
     width: 300px;
@@ -112,3 +117,56 @@ button:active{
 
 }
 
+/*Botão Liga desliga*/
+.ContainerImgPowerButton{
+    display: flex;
+    width: 90%;
+    align-items: end;
+    justify-content: end;
+    margin: 10px auto;
+}
+
+.imgPowerButton{
+    border-radius: 30px;
+    background-color: rgb(100, 100, 100);
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.300);
+    cursor: pointer;
+    width: 50px;
+}
+
+.imgPowerButton:active{
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.900);
+}
+
+/*Animação*/
+.telaLigando{
+    animation-name: telaLigado;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    background-color: rgba(0, 120, 0, 0.8);
+    color: rgb(153, 255, 0);
+    text-shadow: 0px 0px 5px black;
+}
+
+.telaDesligando{
+    animation-name: telaDesligando;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    background-color: rgba(0, 40, 0, 0.8);
+    color: rgba(172, 255, 47, 0);
+}
+
+.telaDesligando::placeholder{
+    color: rgba(172, 255, 47, 0);
+}
+
+@keyframes telaLigado{
+    from {background-color: rgba(0, 40, 0, 0.8);}
+    to {background-color: rgba(0, 120, 0, 0.8);}
+}
+
+@keyframes telaDesligando{
+    from {background-color: rgba(0, 120, 0, 0.8);}
+    to {background-color: rgba(0, 40, 0, 0.8);}
+}
+/*MidiaQuery*/
