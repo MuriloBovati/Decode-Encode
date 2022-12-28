@@ -31,6 +31,7 @@ header{
 header, main{
     width: 70%;
     margin: auto;
+    transition: .5s;
 }
 
 .containerEncoder{
@@ -69,7 +70,7 @@ header, main{
     text-decoration: none;
     border-radius: 10px;
     border: 1px solid rgba(5, 36, 5, 0.432);
-    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.7);
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.9);
 }
 
 .textoCode::placeholder{
@@ -89,7 +90,7 @@ header, main{
 /*Botoes*/
 .containerButtons{
     display: flex;
-    width: 300px;
+    width: 400px;
     margin:  10px auto;
     justify-content: space-around;
     border-radius: 10px;
@@ -99,10 +100,11 @@ header, main{
 }
 
 button{
-    font-size: 1em;
-    height: 80px;
+    font-family: '8bit';
+    font-size: .7em;
+    height: 60px;
     width: 120px;
-    border-radius: 7px;
+    border-radius: 10px;
     font-weight: bold;
     border: none;
     background-color: rgb(100, 100, 100);
@@ -145,7 +147,7 @@ button:active{
     animation-iteration-count: 1;
     background-color: rgba(0, 120, 0, 0.8);
     color: rgb(153, 255, 0);
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 1px 1px 5px black;
 }
 
 .telaDesligando{
@@ -160,6 +162,15 @@ button:active{
     color: rgba(172, 255, 47, 0);
 }
 
+.telaErro{
+    background-color: rgb(180, 0, 0);
+    color: rgb(80, 0, 0);
+    font-weight: bold;
+    animation-name: telaErro;
+    animation-duration: .3s;
+    animation-iteration-count: 2;
+}
+
 @keyframes telaLigado{
     from {background-color: rgba(0, 40, 0, 0.8);}
     to {background-color: rgba(0, 120, 0, 0.8);}
@@ -169,4 +180,47 @@ button:active{
     from {background-color: rgba(0, 120, 0, 0.8);}
     to {background-color: rgba(0, 40, 0, 0.8);}
 }
+
+@keyframes telaErro{
+    0%{background-color: rgb(180, 0, 0);}
+    50%{background-color: rgb(90, 0, 0);}
+    100%{background-color: rgb(180, 0, 0);}
+
+}
 /*MidiaQuery*/
+
+@media (max-width: 600px) {
+    header, main, .containerButtons{
+        transition: 0.5s;
+        width: 100%;
+    }
+    .containerButtons{
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 390px) {
+    header, main, .containerButtons{
+        transition: 0.5s;
+        width: 100%;
+    }
+
+    .containerButtons{
+        align-items: center;
+    }
+
+    .textoCode , .resultado{
+        font-size: .6em;
+    }
+
+    .imgPowerButton{
+        width: 35px;
+    }
+
+    button{
+        height: 60px;
+        width: 90px;
+        font-size: 0.5em;
+    }
+}
