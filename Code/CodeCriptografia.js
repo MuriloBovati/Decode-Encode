@@ -31,11 +31,32 @@ const compEncode = () => {
         },
     
         criptografar(){
+            let textoCrypt = ''
             let arrayTexto = this.texto.value.split(' ')
             for(palavras in arrayTexto){
-                let arrayPalavra = 
+                let arrayPalavra = arrayTexto[palavras].split('')
+                for(letras in arrayPalavra){
+                    if(arrayTexto[palavras][letras] == 'e'){
+                        textoCrypt += arrayPalavra[letras].replace('e', 'enter')
+                    } else
+                    if(arrayTexto[palavras][letras] == 'i'){
+                        textoCrypt += arrayPalavra[letras].replace('i', 'imes')
+                    } else
+                    if(arrayTexto[palavras][letras] == 'a'){
+                        textoCrypt += arrayPalavra[letras].replace('a', 'ai')
+                    } else
+                    if(arrayTexto[palavras][letras] == 'o'){
+                        textoCrypt += arrayPalavra[letras].replace('o', 'ober')
+                    } else
+                    if(arrayTexto[palavras][letras] == 'u'){
+                        textoCrypt += arrayPalavra[letras].replace('u', 'ufat')
+                    } else {
+                        textoCrypt += arrayTexto[palavras][letras]
+                    }
+                } textoCrypt += ' '
             }
-            console.log(arrayTexto)
+            this.slowText(textoCrypt, this.displayResul, 1)
+            console.log(textoCrypt)
         },
     
         descriptografar(){
