@@ -34,11 +34,11 @@ const compEncode = () => {
                             }
                         }
                     } else {
+                        this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
                         this.alertasUsuario(2)
                     }
                 }
             )
-
 
             this.buttonDescript.addEventListener('click', e =>{
                     if(this.estado == 'Ligado'){
@@ -54,14 +54,22 @@ const compEncode = () => {
                             }
                         this.descriptografar()
                     } else {
+                        this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
                         this.alertasUsuario(2)
                     }
             })
+
             this.buttonCopiar.addEventListener('click', e=>{
-                if(!this.displayResul.innerHTML == ''){
-                    this.copiarTexto()
-                } else {
-                    this.alertasUsuario(3)
+                if(this.estado == 'deligado'){
+                    if(!this.displayResul.innerHTML == ''){
+                        this.copiarTexto()
+                    } else {
+                        this.alertasUsuario(3)
+                    }
+                }
+                else{
+                    this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
+                    this.alertasUsuario(1)
                 }
             })
         },
@@ -69,12 +77,14 @@ const compEncode = () => {
         controleGeral(){
             this.texto.addEventListener('click', e =>{
                 if(this.estado == 'Desligado'){
+                    this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
                     this.texto.value = ''
                     this.alertasUsuario(1)
                 }
             })
             this.buttonPower.addEventListener('click', e =>{
                 if(this.estado == 'Desligado'){
+                    this.buttonPower.className = 'imgPowerButton buttonPower'
                     this.estado = 'Ligado'
                     this.texto.placeholder = ''
                     this.texto.value = ''

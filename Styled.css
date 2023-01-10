@@ -171,6 +171,12 @@ button:active{
     animation-iteration-count: 2;
 }
 
+.DestaqueButtonErro{
+    animation-name: destaqueButton;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
 @keyframes telaLigado{
     from {background-color: rgba(0, 40, 0, 0.8);}
     to {background-color: rgba(0, 120, 0, 0.8);}
@@ -185,7 +191,21 @@ button:active{
     0%{background-color: rgb(180, 0, 0);}
     50%{background-color: rgb(90, 0, 0);}
     100%{background-color: rgb(180, 0, 0);}
+}
 
+@keyframes destaqueButton{
+    0% {
+        background-color: rgb(100, 100, 100);
+        box-shadow: none;
+    }
+    50% {
+        background-color: rgb(231, 231, 231);
+        box-shadow: 0px 0px 10px white;
+    }
+    100% {
+        background-color: rgb(100, 100, 100);
+        box-shadow: none;
+    }
 }
 /*MidiaQuery*/
 
