@@ -7,7 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family:'8bit', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 body{
@@ -35,6 +35,7 @@ header, main{
 }
 
 .containerEncoder{
+    position: relative;
     width: 100%;
     max-width: 800px;
     padding-bottom: 15px;
@@ -118,6 +119,43 @@ button:active{
     box-shadow: none;
 
 }
+/*Tutorial*/
+.tutorialInicial{
+    position: absolute;
+    background-color:#585858;
+    width: 94%;
+    top: 25%;
+    left: 3%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 3px 3px 10px black;
+}
+
+.tutorialInicial > h1{
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    text-shadow: 0px 0px 5px rgba(201, 201, 201, 0.363);
+}
+
+.tutorialInicial > p {
+    font-size: 0.7em;
+    color: white;
+    padding-bottom: 5px;
+    margin-top: 25px;
+    text-shadow: 0px 0px 5px black;
+}
+
+.tutorialInicial > span{
+    background-color: rgba(0, 120, 0, 0.8);
+    border-radius: 5px;
+    color: rgb(153, 255, 0);
+    text-shadow: 0px 0px 5px black;
+    padding: 5px;
+}
+.buttonContinue{
+    margin-top: 25px;
+}
 
 /*Botão Liga desliga*/
 .ContainerImgPowerButton{
@@ -140,7 +178,7 @@ button:active{
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.900);
 }
 
-/*Animação*/
+/*Animação Classes*/
 .telaLigando{
     animation-name: telaLigado;
     animation-duration: 1s;
@@ -177,6 +215,13 @@ button:active{
     animation-iteration-count: infinite;
 }
 
+.fechaTutorial{
+    transition: 3s;
+    opacity: 0;
+    top: -70%;
+}
+
+/*Animaçoes gerais*/
 @keyframes telaLigado{
     from {background-color: rgba(0, 40, 0, 0.8);}
     to {background-color: rgba(0, 120, 0, 0.8);}
@@ -207,6 +252,13 @@ button:active{
         box-shadow: none;
     }
 }
+
+@keyframes fechaTelaTutorial{
+    to{
+        top: -70%;
+    }
+}
+
 /*MidiaQuery*/
 
 @media (max-width: 600px) {

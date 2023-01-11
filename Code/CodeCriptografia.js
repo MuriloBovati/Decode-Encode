@@ -6,12 +6,21 @@ const compEncode = () => {
         buttonDescript : document.querySelector('.descript'),
         buttonCopiar : document.querySelector('.copiar'),
         buttonPower : document.querySelector('.buttonPower'),
+        buttonContinue : document.querySelector('.buttonContinue'),
+        telaTutorial : document.querySelector('.tutorialInicial'),
         estado: 'Desligado',
         erro: false,
     
         iniciar(){
             this.controleGeral()
             this.controleButtons()
+            this.tutorial()
+        },
+
+        tutorial(){
+            this.buttonContinue.addEventListener('click', e=>{
+                this.telaTutorial.className = 'tutorialInicial fechaTutorial'
+            })
         },
 
         controleButtons(){
@@ -60,9 +69,10 @@ const compEncode = () => {
             })
 
             this.buttonCopiar.addEventListener('click', e=>{
-                if(this.estado == 'deligado'){
-                    if(!this.displayResul.innerHTML == ''){
+                if(this.estado == 'Ligado'){
+                    if(!this.displayResul.innerHTML == '' && !this.erro){
                         this.copiarTexto()
+                        this.erro = false
                     } else {
                         this.alertasUsuario(3)
                     }
@@ -77,7 +87,6 @@ const compEncode = () => {
         controleGeral(){
             this.texto.addEventListener('click', e =>{
                 if(this.estado == 'Desligado'){
-                    this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
                     this.texto.value = ''
                     this.alertasUsuario(1)
                 }
@@ -168,28 +177,30 @@ const compEncode = () => {
         alertasUsuario(type){
             switch(type){
                 case 1:
-                    alert('Ola, Bem vindo ao sistema de criptografia indico que primeiro tente ligar sistema no botao power')
+                    alert('Indico que primeiro tente ligar o sistema no botão power')
                     break
                 case 2:
-                    alert('Os botoes estão desabilitados, tente ligar o sistema pressionando o botão power')
+                    alert('Os botões estão desabilitados, tente ligar o sistema pressionando o botão power')
                     break
                 case 3:
-                    alert('Primeiro cryptografe uma mensagem para copiala')
-                    break
-                case 'ErroLetraM':
-                    const mensagem = 'Letra MAIUSCULA DETECTADA !!! coloque apenas letras minusculas'
+                    let mensagem = 'Escreva Alguma mensagem para Copiar'
                     this.displayResul.className = "resultado telaErro"
                     this.slowText(mensagem, this.displayResul)
                     break
-                case 'ErroNulo':
-                    const mensagem01 = 'Escreva Alguma mensagem para Cryptografar'
+                case 'ErroLetraM':
+                    let mensagem01 = 'Letra MAIÚSCULA DETECTADA!!! Coloque apenas letras minusculas'
                     this.displayResul.className = "resultado telaErro"
                     this.slowText(mensagem01, this.displayResul)
                     break
-                case 'ErroNuloDesc':
-                    const mensagem02 = 'Escreva Alguma mensagem para Descriptografar'
+                case 'ErroNulo':
+                    let mensagem02 = 'Escreva Alguma mensagem para Criptografar'
                     this.displayResul.className = "resultado telaErro"
                     this.slowText(mensagem02, this.displayResul)
+                    break
+                case 'ErroNuloDesc':
+                    let mensagem03 = 'Escreva Alguma mensagem para Descriptografar'
+                    this.displayResul.className = "resultado telaErro"
+                    this.slowText(mensagem03, this.displayResul)
                     break
 
             }
