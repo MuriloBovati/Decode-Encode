@@ -57,11 +57,14 @@ const compEncode = () => {
                         } else if(hasUpper(this.texto.value)){
                             this.erro = true
                             this.alertasUsuario('ErroLetraM')
-                        } else if(this.erro){
-                                this.erro = false
-                                this.displayResul.className = "resultado telaLigando"
+                            console.log('Erro')
+                        } else {
+                            if(this.erro){
+                                    this.erro = false
+                                    this.displayResul.className = "resultado telaLigando"
                             }
-                        this.descriptografar()
+                            this.descriptografar()
+                        } 
                     } else {
                         this.buttonPower.className = 'imgPowerButton buttonPower DestaqueButtonErro'
                         this.alertasUsuario(2)
